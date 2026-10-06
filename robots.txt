@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://plainsaju.github.io/sitemap.xml

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which one were you born as? — Korean saju day master</title>
+<meta name="description" content="In Korean saju, the day you were born makes you one of ten — a great tree, a candle in the dark, a mountain, the sea. Enter your birthday to see which. Free, no sign-up.">
+<link rel="canonical" href="https://plainsaju.github.io/">
+<meta property="og:url" content="https://plainsaju.github.io/">
+<meta property="og:title" content="Which one were you born as?">
+<meta property="og:description" content="In Korean saju, your birthday makes you one of ten. Find yours — free, no sign-up.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://plainsaju.github.io/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='3' fill='%23B4301E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&text=%E7%94%B2%E4%B9%99%E4%B8%99%E4%B8%81%E6%88%8A%E5%B7%B1%E5%BA%9A%E8%BE%9B%E5%A3%AC%E7%99%B8%E5%9B%9B%E6%9F%B1&display=swap">
+<style>
+:root {
+  --paper: #EFE2CA; --ink: #2A2018; --dim: #6B5B45; --seal: #B4301E; --line: rgba(70,48,22,.26);
+  --wood: #1F6A40; --fire: #A53420; --earth: #744A08; --metal: #4A4378; --water: #1F5A93;
+  --serif: "Times New Roman", Times, "Noto Serif", Georgia, serif;
+  --han: "Noto Serif KR", "Songti SC", "Kaiti SC", "Noto Serif CJK KR", "Noto Serif CJK SC", serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--serif); font-size: 1.09rem; line-height: 1.6;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 90% 70% at 50% 30%, rgba(120,90,50,0) 55%, rgba(120,90,50,.09) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .15 .22 0 0 0 -.08'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-attachment: scroll, scroll;
+}
+main { max-width: 34rem; margin: 0 auto; padding: 2.2rem 1.25rem 3rem; }
+a { color: inherit; }
+.top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.6rem; font-size: .92rem; color: var(--dim); letter-spacing: .04em; }
+.top a { text-decoration: none; border-bottom: 1px solid var(--line); }
+.seal { display: inline-grid; grid-template-columns: 1fr; place-items: center; width: 2.3rem; height: 2.3rem; border: 2px solid var(--seal); border-radius: 3px; color: var(--seal); font-family: var(--han); font-size: .82rem; line-height: 1.05; transform: rotate(-2deg); }
+h1 { font-size: 2.35rem; line-height: 1.1; font-weight: 400; margin: 0 0 1rem; text-align: center; letter-spacing: -.01em; }
+.lede { text-align: center; margin: 0 auto 1.8rem; max-width: 29rem; }
+form { margin: 0 0 .6rem; }
+.fields { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr; gap: .5rem; }
+label.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+select, button { font: inherit; color: var(--ink); }
+select {
+  width: 100%; padding: .7rem .6rem; background: rgba(255,250,240,.55); border: 1px solid var(--line); border-radius: 4px;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B5B45'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right .6rem center; padding-right: 1.5rem;
+}
+select:focus-visible, button:focus-visible, a:focus-visible, .ten button:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
+.go { display: block; width: 100%; margin-top: .6rem; padding: .8rem 1rem; background: var(--seal); color: #FFF7EA; border: 0; border-radius: 4px; font-size: 1.12rem; letter-spacing: .02em; cursor: pointer; }
+.go:hover { background: #9C2717; }
+.err { min-height: 1.4rem; margin: .4rem 0 0; color: var(--seal); font-size: .95rem; text-align: center; }
+.free { text-align: center; color: var(--dim); font-size: .92rem; margin: .1rem 0 0; }
+
+#result { margin-top: 2.4rem; padding-top: 2.2rem; border-top: 1px solid var(--line); text-align: center; }
+#result[hidden] { display: none; }
+.kick { color: var(--dim); font-size: .98rem; letter-spacing: .05em; margin: 0; }
+.han { font-family: var(--han); font-weight: 500; font-size: 8.5rem; line-height: 1.1; margin: .5rem 0 .2rem; }
+h2 { font-size: 1.9rem; line-height: 1.15; font-weight: 400; margin: 0 0 .35rem; }
+.tag { color: var(--dim); font-size: .98rem; margin: 0 0 1.5rem; }
+.h { font-family: var(--han); }
+.body { text-align: left; }
+.body p { margin: 0 0 1.05rem; }
+.body .lab { display: block; font-size: .86rem; letter-spacing: .09em; text-transform: uppercase; color: var(--seal); margin-bottom: .1rem; }
+details { text-align: left; margin: 1.3rem 0 0; padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 4px; font-size: .97rem; background: rgba(255,250,240,.3); }
+details[hidden] { display: none; }
+summary { cursor: pointer; color: var(--dim); }
+details p { margin: .6rem 0 0; }
+.share { margin: 1.2rem 0 0; font-size: .95rem; }
+.share button { background: none; border: 0; padding: 0; color: var(--dim); border-bottom: 1px solid var(--line); cursor: pointer; }
+
+.more { margin-top: 2.4rem; padding: 1.6rem 1.2rem 1.7rem; border: 1px solid var(--line); border-radius: 6px; background: rgba(255,250,240,.38); text-align: center; }
+.more h3 { font-size: 1.45rem; font-weight: 400; margin: 0 0 .7rem; line-height: 1.2; }
+.more p { margin: 0 0 .9rem; text-align: left; }
+.cta { display: inline-block; margin-top: .3rem; padding: .78rem 1.3rem; background: var(--ink); color: #FBF3E2; text-decoration: none; border-radius: 4px; font-size: 1.06rem; }
+.cta:hover { background: #000; }
+.more .alt { display: block; margin-top: .8rem; font-size: .95rem; color: var(--dim); text-align: center; }
+
+.ten-wrap { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); text-align: center; }
+.ten-wrap h3 { font-size: 1.35rem; font-weight: 400; margin: 0 0 .2rem; }
+.ten-wrap > p { margin: 0 0 1.1rem; color: var(--dim); font-size: .98rem; }
+.ten { display: grid; grid-template-columns: repeat(5, 1fr); gap: .45rem; }
+.ten button { padding: .55rem .1rem .5rem; background: rgba(255,250,240,.38); border: 1px solid var(--line); border-radius: 4px; cursor: pointer; line-height: 1.2; }
+.ten button:hover, .ten button[aria-pressed="true"] { background: rgba(255,250,240,.8); border-color: var(--ink); }
+.ten .c { display: block; font-family: var(--han); font-weight: 500; font-size: 1.9rem; line-height: 1.25; }
+.ten .n { display: block; font-size: .78rem; color: var(--dim); }
+.wood { color: var(--wood); } .fire { color: var(--fire); } .earth { color: var(--earth); } .metal { color: var(--metal); } .water { color: var(--water); }
+footer { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line); text-align: center; color: var(--dim); font-size: .92rem; }
+footer p { margin: 0 0 .35rem; }
+@media (max-width: 24rem) { h1 { font-size: 2rem; } .han { font-size: 7rem; } h2 { font-size: 1.65rem; } .ten .n { font-size: .7rem; } }
+@media (prefers-reduced-motion: no-preference) { #result.in { animation: rise .5s ease both; } @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } } }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <span class="seal" aria-hidden="true">四<br>柱</span>
+    <a href="https://plainsaju.etsy.com" rel="noopener">PlainSaju · Korean saju in English</a>
+  </div>
+
+  <h1>Which one were you born&nbsp;as?</h1>
+  <p class="lede">In Korean saju, the day you were born makes you one of ten — a great tree, a candle in the dark, a mountain, the sea. Enter your birthday to see which.</p>
+
+  <form id="f" novalidate>
+    <div class="fields">
+      <div><label class="sr" for="m">Birth month</label>
+        <select id="m" required><option value="">Month</option></select></div>
+      <div><label class="sr" for="d">Birth day</label>
+        <select id="d" required><option value="">Day</option></select></div>
+      <div><label class="sr" for="y">Birth year</label>
+        <select id="y" required><option value="">Year</option></select></div>
+    </div>
+    <button class="go" type="submit">Show me</button>
+    <p class="err" id="err" role="alert"></p>
+  </form>
+  <p class="free">Free. No sign-up. Nothing you type leaves this page.</p>
+
+  <section id="result" hidden aria-live="polite" tabindex="-1">
+    <p class="kick" id="r-kick"></p>
+    <div class="han" id="r-han" aria-hidden="true"></div>
+    <h2 id="r-image"></h2>
+    <p class="tag" id="r-tag"></p>
+    <div class="body">
+      <p id="r-essence"></p>
+      <p><span class="lab">Your gift</span><span id="r-gift"></span></p>
+      <p><span class="lab">Your shadow</span><span id="r-shadow"></span></p>
+    </div>
+    <details id="r-night">
+      <summary>Born close to midnight?</summary>
+      <p id="r-night-text"></p>
+    </details>
+    <p class="share"><button type="button" id="copy">Copy a link to this one</button></p>
+
+    <div class="more">
+      <h3>This is one character of eight.</h3>
+      <p>Your birth date and time make eight characters, set in four pillars. The one above is your day master — the character that stands for you. The other seven are what surrounds it: what feeds you, what wears you down, who you draw in, and the ten-year cycles your life moves through.</p>
+      <p>A full reading works through all eight in plain English. It is calculated from your birth date, time and city, and arrives as a PDF.</p>
+      <a class="cta" href="https://www.etsy.com/listing/4586896179" rel="noopener">See the full reading on Etsy</a>
+      <a class="alt" href="https://plainsaju.etsy.com" rel="noopener">or look through all six readings</a>
+    </div>
+  </section>
+
+  <section class="ten-wrap">
+    <h3>The ten day masters</h3>
+    <p>Everyone is one of these. Tap any of them to read it.</p>
+    <div class="ten" id="ten"></div>
+  </section>
+
+  <footer>
+    <p>Saju describes. It doesn’t predict.</p>
+    <p>© PlainSaju</p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var TEN = [
+    { k: 'gap', h: '甲', name: 'Gap Wood', el: 'wood', short: 'great tree', image: 'a great tree growing straight',
+      essence: 'It knows no direction but up. It isn’t afraid to begin, and standing in front comes naturally.',
+      gift: 'Once the direction is set, you don’t waver. The people around you line up using you as the reference point.',
+      shadow: 'Never having learned how to bend, you hold on until something gives — and then you break all at once.' },
+    { k: 'eul', h: '乙', name: 'Eul Wood', el: 'wood', short: 'climbing vine', image: 'vines and grasses that climb',
+      essence: 'It doesn’t push head-on. It winds around and ends up on top anyway. It looks soft, but it rarely dies.',
+      gift: 'You put down roots in any setting. Trampled, you stand back up.',
+      shadow: 'A habit of looking for something to lean on first. Left alone where there’s no one to ask, you fall apart.' },
+    { k: 'byeong', h: '丙', name: 'Byeong Fire', el: 'fire', short: 'midday sun', image: 'the midday sun',
+      essence: 'It can’t hide. When it walks in, the temperature of the room changes. Not knowing how to conceal is both its virtue and its weakness.',
+      gift: 'You warm people. Being near you gives them energy.',
+      shadow: 'So busy lighting everyone else that you don’t notice you’re worn out. You keep every appointment, come home, and only then go dark — alone.' },
+    { k: 'jeong', h: '丁', name: 'Jeong Fire', el: 'fire', short: 'candle', image: 'a candle in the dark',
+      essence: 'It can’t light a wide space, but it warms what’s close with precision. It has an uncanny sense of exactly where it’s needed.',
+      gift: 'You look after one person all the way. Whoever receives that warmth remembers it for a long time.',
+      shadow: 'You forget that you shine by burning yourself. You only notice once you’ve burned all the way down.' },
+    { k: 'mu', h: '戊', name: 'Mu Earth', el: 'earth', short: 'mountain', image: 'a mountain that doesn’t move',
+      essence: 'It doesn’t waver. Whatever noise is going on around you, you stay where you are — and people take that for granted.',
+      gift: 'You can be trusted. With you there, things don’t fall apart.',
+      shadow: 'You can’t tell holding firm from hardening. Even when your old way stops working, you rarely change it — a mountain doesn’t grow.' },
+    { k: 'gi', h: '己', name: 'Gi Earth', el: 'earth', short: 'field soil', image: 'field soil that grows anything',
+      essence: 'It makes things work without being seen. The credit goes to others and the work comes to you — and you know it, and do it anyway.',
+      gift: 'You make anything grow — people, work, relationships.',
+      shadow: 'You can’t speak up for your share. And inside, you keep count.' },
+    { k: 'gyeong', h: '庚', name: 'Gyeong Metal', el: 'metal', short: 'raw iron', image: 'unforged iron and an axe',
+      essence: 'It cuts. It can’t stand anything vague, and it can’t sleep until there’s a conclusion. People lean on that decisiveness — and get hurt by it.',
+      gift: 'You decide. You cut what no one else will touch.',
+      shadow: 'You don’t know many ways besides cutting. Only later do you learn there was a person where you cut.' },
+    { k: 'sin', h: '辛', name: 'Sin Metal', el: 'metal', short: 'cut jewel', image: 'a cut jewel, a well-honed blade',
+      essence: 'It is precise. It sees flaws others can’t. That’s why it makes beautiful things — and that’s why it often hurts.',
+      gift: 'You see down to the smallest detail. Whatever passes through your hands comes out a class above.',
+      shadow: 'The sharpest blade is the one you point at yourself. If it isn’t perfect, you can’t bring yourself to show it at all.' },
+    { k: 'im', h: '壬', name: 'Im Water', el: 'water', short: 'the sea', image: 'great rivers and the sea',
+      essence: 'It takes everything in. It lets in people and work without discrimination, so things grow big fast. It can go anywhere — and so it can’t decide where to go.',
+      gift: 'You’re broad-hearted. Little surprises you, and you can embrace almost anyone.',
+      shadow: 'With so many possibilities, you choose none. Flowing and drifting are not the same.' },
+    { k: 'gye', h: '癸', name: 'Gye Water', el: 'water', short: 'dew', image: 'dew and drizzle',
+      essence: 'It seeps in. It enters without a sound and soaks all the way through. It reads other people’s insides too well — and stays just as long inside its own.',
+      gift: 'You see deeply. You hear what people leave unsaid.',
+      shadow: 'You seep only inward and can’t find your way back out. You wear yourself out weighing things.' }
+  ];
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var $ = function (id) { return document.getElementById(id); };
+  var m = $('m'), d = $('d'), y = $('y');
+
+  /* Day stem from the Gregorian date: Julian Day Number, then (JDN + 9) mod 10 with 0 = 甲.
+     Checked against the shop's chart engine for every date from 1900 to 2035. */
+  function jdn(yy, mm, dd) {
+    var a = Math.floor((14 - mm) / 12), Y = yy + 4800 - a, M = mm + 12 * a - 3;
+    return dd + Math.floor((153 * M + 2) / 5) + 365 * Y + Math.floor(Y / 4) - Math.floor(Y / 100) + Math.floor(Y / 400) - 32045;
+  }
+  function stem(yy, mm, dd) { return (jdn(yy, mm, dd) + 9) % 10; }
+  function daysIn(yy, mm) { return new Date(yy || 2000, mm || 1, 0).getDate(); }
+
+  function opt(sel, v, t) { var o = document.createElement('option'); o.value = v; o.textContent = t; sel.appendChild(o); }
+  MONTHS.forEach(function (n, i) { opt(m, i + 1, n); });
+  var thisYear = new Date().getFullYear();
+  for (var yr = thisYear; yr >= 1920; yr--) opt(y, yr, yr);
+  function fillDays() {
+    var keep = d.value, n = daysIn(+y.value, +m.value);
+    d.length = 1;
+    for (var i = 1; i <= n; i++) opt(d, i, i);
+    if (keep && +keep <= n) d.value = keep;
+  }
+  fillDays();
+  m.addEventListener('change', fillDays);
+  y.addEventListener('change', fillDays);
+
+  var ten = $('ten');
+  TEN.forEach(function (t, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('aria-pressed', 'false');
+    b.setAttribute('aria-label', t.name + ' — ' + t.image);
+    b.innerHTML = '<span class="c ' + t.el + '">' + t.h + '</span><span class="n">' + t.short + '</span>';
+    b.addEventListener('click', function () { show(i, null); });
+    ten.appendChild(b);
+  });
+
+  function show(i, date, quiet) {
+    var t = TEN[i], r = $('result');
+    $('err').textContent = '';
+    $('r-kick').textContent = date ? 'Born ' + MONTHS[date.m - 1] + ' ' + date.d + ', ' + date.y + ' — you were born as' : 'One of the ten';
+    $('r-han').textContent = t.h; $('r-han').className = 'han ' + t.el;
+    $('r-image').textContent = t.image;
+    $('r-tag').innerHTML = t.name + ' · <span class="h">' + t.h + '</span>' + (date ? ' · your day master' : '');
+    $('r-essence').textContent = t.essence;
+    $('r-gift').textContent = t.gift;
+    $('r-shadow').textContent = t.shadow;
+    var night = $('r-night');
+    if (date) {
+      var before = TEN[(i + 9) % 10], after = TEN[(i + 1) % 10];
+      $('r-night-text').innerHTML = 'Saju goes by the sun over your birthplace, not by the clock, and the two can be an hour or more apart. ' +
+        'So if you were born within an hour or two of midnight, your day can slip to the one next to it. ' +
+        'Just after midnight, you may be <span class="h">' + before.h + '</span> instead — ' + before.image + '. ' +
+        'Just before midnight, <span class="h">' + after.h + '</span> — ' + after.image + '. ' +
+        'A full reading settles it from your birth time and city.';
+      night.hidden = false; night.open = false;
+    } else { night.hidden = true; }
+    [].forEach.call(ten.children, function (b, n) { b.setAttribute('aria-pressed', n === i ? 'true' : 'false'); });
+    $('copy').textContent = 'Copy a link to this one';
+    r.hidden = false; r.classList.remove('in'); void r.offsetWidth; r.classList.add('in');
+    try { history.replaceState(null, '', '#' + t.k); } catch (e) {}
+    if (quiet) return;
+    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    r.focus({ preventScroll: true });
+  }
+
+  $('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var yy = +y.value, mm = +m.value, dd = +d.value;
+    if (!yy || !mm || !dd) { $('err').textContent = 'Pick your month, day and year.'; return; }
+    $('err').textContent = '';
+    show(stem(yy, mm, dd), { y: yy, m: mm, d: dd });
+  });
+
+  $('copy').addEventListener('click', function () {
+    var b = this, url = location.href;
+    function done() { b.textContent = 'Link copied'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function () { b.textContent = url; });
+    else b.textContent = url;
+  });
+
+  var h = location.hash.replace('#', '');
+  for (var i = 0; i < TEN.length; i++) if (TEN[i].k === h) { show(i, null, true); break; }
+})();
+</script>
+</body>
+</html>
