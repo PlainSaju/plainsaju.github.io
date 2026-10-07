@@ -3,116 +3,108 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Which one were you born as? — Korean saju day master</title>
-<meta name="description" content="In Korean saju, the day you were born makes you one of ten — a great tree, a candle in the dark, a mountain, the sea. Enter your birthday to see which. Free, no sign-up.">
+<title>Which one were you born as? Korean saju day master</title>
+<meta name="description" content="In Korean saju, the day you were born makes you one of ten: a great tree, a candle in the dark, a mountain, the sea. Enter your birthday to see which. Free, no sign-up.">
 <link rel="canonical" href="https://plainsaju.github.io/">
 <meta property="og:url" content="https://plainsaju.github.io/">
 <meta property="og:title" content="Which one were you born as?">
-<meta property="og:description" content="In Korean saju, your birthday makes you one of ten. Find yours — free, no sign-up.">
+<meta property="og:description" content="In Korean saju, your birthday makes you one of ten. Find yours. Free, no sign-up.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://plainsaju.github.io/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='3' fill='%23B4301E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&text=%E7%94%B2%E4%B9%99%E4%B8%99%E4%B8%81%E6%88%8A%E5%B7%B1%E5%BA%9A%E8%BE%9B%E5%A3%AC%E7%99%B8%E5%9B%9B%E6%9F%B1&display=swap">
 <style>
 :root {
-  --paper: #EFE2CA; --ink: #2A2018; --dim: #6B5B45; --seal: #B4301E; --line: rgba(70,48,22,.26);
-  --wood: #1F6A40; --fire: #A53420; --earth: #744A08; --metal: #4A4378; --water: #1F5A93;
-  --serif: "Times New Roman", Times, "Noto Serif", Georgia, serif;
-  --han: "Noto Serif KR", "Songti SC", "Kaiti SC", "Noto Serif CJK KR", "Noto Serif CJK SC", serif;
+  --paper: #EFE2CA; --ink: #1A1613; --dim: #5F554B; --seal: #B4301E; --hair: rgba(26,22,19,.28);
+  --wood: #2F6B4A; --fire: #A53420; --earth: #8A6418; --metal: #4A4378; --water: #1F5A93;
+  --serif: "Hoefler Text", "EB Garamond", Georgia, serif;
+  --sans: "Avenir Next", "Jost", system-ui, sans-serif;
+  --han: "Kaiti SC", "STKaiti", "Noto Serif KR", "Songti SC", serif;
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scrollbar-color: rgba(26,22,19,.35) transparent; accent-color: var(--seal); caret-color: var(--seal); }
+::selection { background: rgba(180,48,30,.22); color: var(--ink); }
 body {
-  margin: 0; color: var(--ink); font-family: var(--serif); font-size: 1.09rem; line-height: 1.6;
+  margin: 0; color: var(--ink); font-family: var(--serif); font-size: 1.19rem; line-height: 1.55;
   background-color: var(--paper);
-  background-image:
-    radial-gradient(ellipse 90% 70% at 50% 30%, rgba(120,90,50,0) 55%, rgba(120,90,50,.09) 100%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .15 .22 0 0 0 -.08'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-attachment: scroll, scroll;
+  background-image: radial-gradient(ellipse 110% 60% at 20% 0%, rgba(255,252,244,.55), rgba(255,252,244,0) 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='2' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .15 .2 0 0 0 -.08'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)'/%3E%3C/svg%3E");
 }
-main { max-width: 34rem; margin: 0 auto; padding: 2.2rem 1.25rem 3rem; }
-a { color: inherit; }
-.top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.6rem; font-size: .92rem; color: var(--dim); letter-spacing: .04em; }
-.top a { text-decoration: none; border-bottom: 1px solid var(--line); }
-.seal { display: inline-grid; grid-template-columns: 1fr; place-items: center; width: 2.3rem; height: 2.3rem; border: 2px solid var(--seal); border-radius: 3px; color: var(--seal); font-family: var(--han); font-size: .82rem; line-height: 1.05; transform: rotate(-2deg); }
-h1 { font-size: 2.35rem; line-height: 1.1; font-weight: 400; margin: 0 0 1rem; text-align: center; letter-spacing: -.01em; }
-.lede { text-align: center; margin: 0 auto 1.8rem; max-width: 29rem; }
-form { margin: 0 0 .6rem; }
+main { max-width: 37rem; margin: 0 auto; padding: 1.6rem 1.25rem 3.5rem; }
+a { color: inherit; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--seal); outline-offset: 3px; }
+.label { font-family: var(--sans); font-weight: 500; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+.bar { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--hair); }
+.bar a { text-decoration: none; }
+.bar a:hover { color: var(--ink); }
+h1 { font-weight: 400; font-size: clamp(2.9rem, 13vw, 4.6rem); line-height: .98; letter-spacing: -.02em; margin: 2.6rem 0 1.3rem; text-wrap: balance; }
+.lede { margin: 0 0 2rem; max-width: 31rem; }
 .fields { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr; gap: .5rem; }
-label.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 select, button { font: inherit; color: var(--ink); }
 select {
-  width: 100%; padding: .7rem .6rem; background: rgba(255,250,240,.55); border: 1px solid var(--line); border-radius: 4px;
-  appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B5B45'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right .6rem center; padding-right: 1.5rem;
+  width: 100%; padding: .72rem 1.6rem .72rem .7rem; background-color: rgba(255,252,244,.5); border: 1px solid var(--hair); border-radius: 3px;
+  appearance: none; -webkit-appearance: none; background-repeat: no-repeat; background-position: right .65rem center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235F554B'/%3E%3C/svg%3E");
 }
-select:focus-visible, button:focus-visible, a:focus-visible, .ten button:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
-.go { display: block; width: 100%; margin-top: .6rem; padding: .8rem 1rem; background: var(--seal); color: #FFF7EA; border: 0; border-radius: 4px; font-size: 1.12rem; letter-spacing: .02em; cursor: pointer; }
-.go:hover { background: #9C2717; }
-.err { min-height: 1.4rem; margin: .4rem 0 0; color: var(--seal); font-size: .95rem; text-align: center; }
-.free { text-align: center; color: var(--dim); font-size: .92rem; margin: .1rem 0 0; }
+select:hover { border-color: var(--ink); }
+.go { display: block; width: 100%; margin-top: .55rem; padding: .85rem 1rem; background: var(--seal); color: #FFF7EA; border: 0; border-radius: 3px; font-size: 1.22rem; cursor: pointer; transition: background .15s; }
+.go:hover { background: #99270F; }
+.go:active { transform: translateY(1px); }
+.err { min-height: 1.5rem; margin: .45rem 0 0; color: var(--seal); font-size: 1.02rem; }
+.free { color: var(--dim); font-size: 1.02rem; margin: 0; }
 
-#result { margin-top: 2.4rem; padding-top: 2.2rem; border-top: 1px solid var(--line); text-align: center; }
+#result { margin-top: 2.8rem; padding-top: .7rem; border-top: 1px solid var(--hair); }
 #result[hidden] { display: none; }
-.kick { color: var(--dim); font-size: .98rem; letter-spacing: .05em; margin: 0; }
-.han { font-family: var(--han); font-weight: 500; font-size: 8.5rem; line-height: 1.1; margin: .5rem 0 .2rem; }
-h2 { font-size: 1.9rem; line-height: 1.15; font-weight: 400; margin: 0 0 .35rem; }
-.tag { color: var(--dim); font-size: .98rem; margin: 0 0 1.5rem; }
-.h { font-family: var(--han); }
-.body { text-align: left; }
-.body p { margin: 0 0 1.05rem; }
-.body .lab { display: block; font-size: .86rem; letter-spacing: .09em; text-transform: uppercase; color: var(--seal); margin-bottom: .1rem; }
-details { text-align: left; margin: 1.3rem 0 0; padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 4px; font-size: .97rem; background: rgba(255,250,240,.3); }
+.glyph { position: relative; width: min(100%, 21rem); aspect-ratio: 1; margin: 1.1rem 0 .4rem -1rem; }
+.glyph canvas { width: 100%; height: 100%; display: block; }
+.who { display: flex; align-items: center; gap: .6rem; margin: 0 0 .5rem; }
+.who i { width: .62rem; height: .62rem; border-radius: 50%; flex: none; }
+.who .label { color: var(--ink); }
+h2 { font-weight: 400; font-style: italic; font-size: clamp(2.2rem, 9.5vw, 3.1rem); line-height: 1.08; letter-spacing: -.01em; margin: 0 0 1.4rem; text-wrap: balance; }
+.body p { margin: 0 0 1rem; max-width: 33rem; }
+.run { font-family: var(--sans); font-weight: 500; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; color: var(--seal); margin-right: .55rem; }
+details { margin: 1.5rem 0 0; padding: .75rem 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); font-size: 1.06rem; }
 details[hidden] { display: none; }
 summary { cursor: pointer; color: var(--dim); }
-details p { margin: .6rem 0 0; }
-.share { margin: 1.2rem 0 0; font-size: .95rem; }
-.share button { background: none; border: 0; padding: 0; color: var(--dim); border-bottom: 1px solid var(--line); cursor: pointer; }
-
-.more { margin-top: 2.4rem; padding: 1.6rem 1.2rem 1.7rem; border: 1px solid var(--line); border-radius: 6px; background: rgba(255,250,240,.38); text-align: center; }
-.more h3 { font-size: 1.45rem; font-weight: 400; margin: 0 0 .7rem; line-height: 1.2; }
-.more p { margin: 0 0 .9rem; text-align: left; }
-.cta { display: inline-block; margin-top: .3rem; padding: .78rem 1.3rem; background: var(--ink); color: #FBF3E2; text-decoration: none; border-radius: 4px; font-size: 1.06rem; }
+details p { margin: .6rem 0 .2rem; max-width: 33rem; }
+.han { font-family: var(--han); }
+.share { margin: 1rem 0 0; font-size: 1.02rem; }
+.share button { background: none; border: 0; padding: 0; color: var(--dim); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; cursor: pointer; }
+.more { margin-top: 3rem; }
+.more h3, .ten-wrap h3 { font-weight: 400; font-size: clamp(1.9rem, 8vw, 2.5rem); line-height: 1.08; letter-spacing: -.01em; margin: 0 0 .9rem; text-wrap: balance; }
+.more p { margin: 0 0 1rem; max-width: 33rem; }
+.cta { display: inline-block; margin-top: .4rem; padding: .85rem 1.4rem; background: var(--ink); color: #FBF3E2; text-decoration: none; border-radius: 3px; transition: background .15s; }
 .cta:hover { background: #000; }
-.more .alt { display: block; margin-top: .8rem; font-size: .95rem; color: var(--dim); text-align: center; }
-
-.ten-wrap { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); text-align: center; }
-.ten-wrap h3 { font-size: 1.35rem; font-weight: 400; margin: 0 0 .2rem; }
-.ten-wrap > p { margin: 0 0 1.1rem; color: var(--dim); font-size: .98rem; }
-.ten { display: grid; grid-template-columns: repeat(5, 1fr); gap: .45rem; }
-.ten button { padding: .55rem .1rem .5rem; background: rgba(255,250,240,.38); border: 1px solid var(--line); border-radius: 4px; cursor: pointer; line-height: 1.2; }
-.ten button:hover, .ten button[aria-pressed="true"] { background: rgba(255,250,240,.8); border-color: var(--ink); }
-.ten .c { display: block; font-family: var(--han); font-weight: 500; font-size: 1.9rem; line-height: 1.25; }
-.ten .n { display: block; font-size: .78rem; color: var(--dim); }
-.wood { color: var(--wood); } .fire { color: var(--fire); } .earth { color: var(--earth); } .metal { color: var(--metal); } .water { color: var(--water); }
-footer { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line); text-align: center; color: var(--dim); font-size: .92rem; }
-footer p { margin: 0 0 .35rem; }
-@media (max-width: 24rem) { h1 { font-size: 2rem; } .han { font-size: 7rem; } h2 { font-size: 1.65rem; } .ten .n { font-size: .7rem; } }
-@media (prefers-reduced-motion: no-preference) { #result.in { animation: rise .5s ease both; } @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } } }
+.more .alt { display: inline-block; margin: .9rem 0 0 1.1rem; font-size: 1.02rem; color: var(--dim); }
+.ten-wrap { margin-top: 3.4rem; padding-top: 1.6rem; border-top: 1px solid var(--hair); }
+.ten-wrap > p { margin: 0 0 1.2rem; color: var(--dim); }
+.ten { display: grid; grid-template-columns: repeat(5, 1fr); row-gap: 1.1rem; }
+.ten button { background: none; border: 0; padding: .2rem 0 .3rem; text-align: left; cursor: pointer; border-bottom: 1px solid transparent; }
+.ten button:hover, .ten button[aria-pressed="true"] { border-bottom-color: var(--ink); }
+.ten .c { display: block; font-family: var(--han); font-size: 2.5rem; line-height: 1.15; }
+.ten .n { display: flex; align-items: center; gap: .32rem; font-family: var(--sans); font-weight: 500; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.ten .n i { width: .4rem; height: .4rem; border-radius: 50%; flex: none; }
+footer { margin-top: 3.4rem; padding-top: .9rem; border-top: 1px solid var(--hair); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+@media (max-width: 26rem) { .more .alt { display: block; margin-left: 0; } .ten .n { letter-spacing: .06em; font-size: .56rem; } }
 </style>
 </head>
 <body>
 <main>
-  <div class="top">
-    <span class="seal" aria-hidden="true">四<br>柱</span>
-    <a href="https://plainsaju.etsy.com" rel="noopener">PlainSaju · Korean saju in English</a>
-  </div>
+  <div class="bar label"><span>PlainSaju</span><a href="https://plainsaju.etsy.com" rel="noopener">The shop on Etsy</a></div>
 
-  <h1>Which one were you born&nbsp;as?</h1>
-  <p class="lede">In Korean saju, the day you were born makes you one of ten — a great tree, a candle in the dark, a mountain, the sea. Enter your birthday to see which.</p>
+  <h1>Which one were you born as?</h1>
+  <p class="lede">In Korean saju, the day you were born makes you one of ten: a great tree, a candle in the dark, a mountain, the sea. Enter your birthday to see which.</p>
 
   <form id="f" novalidate>
     <div class="fields">
-      <div><label class="sr" for="m">Birth month</label>
-        <select id="m" required><option value="">Month</option></select></div>
-      <div><label class="sr" for="d">Birth day</label>
-        <select id="d" required><option value="">Day</option></select></div>
-      <div><label class="sr" for="y">Birth year</label>
-        <select id="y" required><option value="">Year</option></select></div>
+      <div><label class="sr" for="m">Birth month</label><select id="m" required><option value="">Month</option></select></div>
+      <div><label class="sr" for="d">Birth day</label><select id="d" required><option value="">Day</option></select></div>
+      <div><label class="sr" for="y">Birth year</label><select id="y" required><option value="">Year</option></select></div>
     </div>
     <button class="go" type="submit">Show me</button>
     <p class="err" id="err" role="alert"></p>
@@ -120,14 +112,14 @@ footer p { margin: 0 0 .35rem; }
   <p class="free">Free. No sign-up. Nothing you type leaves this page.</p>
 
   <section id="result" hidden aria-live="polite" tabindex="-1">
-    <p class="kick" id="r-kick"></p>
-    <div class="han" id="r-han" aria-hidden="true"></div>
+    <p class="label" id="r-kick"></p>
+    <div class="glyph" aria-hidden="true"><canvas id="ink" width="640" height="640"></canvas></div>
+    <p class="who"><i id="r-dot"></i><span class="label" id="r-tag"></span></p>
     <h2 id="r-image"></h2>
-    <p class="tag" id="r-tag"></p>
     <div class="body">
       <p id="r-essence"></p>
-      <p><span class="lab">Your gift</span><span id="r-gift"></span></p>
-      <p><span class="lab">Your shadow</span><span id="r-shadow"></span></p>
+      <p><span class="run">Your gift</span><span id="r-gift"></span></p>
+      <p><span class="run">Your shadow</span><span id="r-shadow"></span></p>
     </div>
     <details id="r-night">
       <summary>Born close to midnight?</summary>
@@ -137,7 +129,7 @@ footer p { margin: 0 0 .35rem; }
 
     <div class="more">
       <h3>This is one character of eight.</h3>
-      <p>Your birth date and time make eight characters, set in four pillars. The one above is your day master — the character that stands for you. The other seven are what surrounds it: what feeds you, what wears you down, who you draw in, and the ten-year cycles your life moves through.</p>
+      <p>Your birth date and time make eight characters, set in four pillars. The one above is your day master, the character that stands for you. The other seven are what surrounds it: what feeds you, what wears you down, who you draw in, and the ten-year cycles your life moves through.</p>
       <p>A full reading works through all eight in plain English. It is calculated from your birth date, time and city, and arrives as a PDF.</p>
       <a class="cta" href="https://www.etsy.com/listing/4586896179" rel="noopener">See the full reading on Etsy</a>
       <a class="alt" href="https://plainsaju.etsy.com" rel="noopener">or look through all six readings</a>
@@ -150,10 +142,7 @@ footer p { margin: 0 0 .35rem; }
     <div class="ten" id="ten"></div>
   </section>
 
-  <footer>
-    <p>Saju describes. It doesn’t predict.</p>
-    <p>© PlainSaju</p>
-  </footer>
+  <footer class="label"><span>Saju describes. It doesn’t predict.</span><span>© PlainSaju</span></footer>
 </main>
 
 <script>
@@ -203,6 +192,8 @@ footer p { margin: 0 0 .35rem; }
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var $ = function (id) { return document.getElementById(id); };
   var m = $('m'), d = $('d'), y = $('y');
+  var css = getComputedStyle(document.documentElement);
+  var INK = [26, 22, 19], SEAL = [180, 48, 30];
 
   /* Day stem from the Gregorian date: Julian Day Number, then (JDN + 9) mod 10 with 0 = 甲.
      Checked against the shop's chart engine for every date from 1900 to 2035. */
@@ -227,12 +218,66 @@ footer p { margin: 0 0 .35rem; }
   m.addEventListener('change', fillDays);
   y.addEventListener('change', fillDays);
 
+  /* The one authored moment: the character soaks into the paper like ink.
+     A glyph mask times a noise threshold that sweeps top to bottom, then (for your own result) the ink warms to seal red. */
+  var cv = $('ink'), cx = cv.getContext('2d', { willReadFrequently: true }), N = cv.width, raf = 0;
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function noise(cell, seed) {
+    var g = Math.ceil(N / cell) + 2, grid = new Float32Array(g * g), s = seed;
+    for (var i = 0; i < grid.length; i++) { s = (s * 1664525 + 1013904223) >>> 0; grid[i] = s / 4294967296; }
+    var out = new Float32Array(N * N);
+    for (var yy = 0; yy < N; yy++) { var fy = yy / cell, y0 = fy | 0, ty = fy - y0; ty = ty * ty * (3 - 2 * ty);
+      for (var xx = 0; xx < N; xx++) { var fx = xx / cell, x0 = fx | 0, tx = fx - x0; tx = tx * tx * (3 - 2 * tx);
+        var a = grid[y0 * g + x0], b = grid[y0 * g + x0 + 1], c = grid[(y0 + 1) * g + x0], e = grid[(y0 + 1) * g + x0 + 1];
+        var top = a + (b - a) * tx, bot = c + (e - c) * tx; out[yy * N + xx] = top + (bot - top) * ty; } }
+    return out;
+  }
+  var FIELD = null;
+  function field() {
+    if (FIELD) return FIELD;
+    var a = noise(110, 7), b = noise(28, 99), c = noise(8, 5); FIELD = new Float32Array(N * N);
+    for (var i = 0; i < N * N; i++) FIELD[i] = 0.3 * a[i] + 0.28 * b[i] + 0.12 * c[i] + 0.3 * ((i / N) | 0) / N;
+    return FIELD;
+  }
+  function glyphMask(ch) {
+    cx.clearRect(0, 0, N, N);
+    cx.fillStyle = '#000'; cx.textAlign = 'center'; cx.textBaseline = 'alphabetic';
+    cx.font = '500 ' + Math.round(N * 0.86) + 'px ' + css.getPropertyValue('--han');
+    var mt = cx.measureText(ch), h = mt.actualBoundingBoxAscent + mt.actualBoundingBoxDescent;
+    cx.fillText(ch, N / 2, (N - h) / 2 + mt.actualBoundingBoxAscent);
+    var src = cx.getImageData(0, 0, N, N).data, mask = new Uint8ClampedArray(N * N);
+    for (var i = 0; i < N * N; i++) mask[i] = src[i * 4 + 3];
+    return mask;
+  }
+  function paint(mask, p, warm) {
+    var img = cx.createImageData(N, N), o = img.data, f = field(), T = p * 1.4 - 0.18, w = 0.13;
+    var r = INK[0] + (SEAL[0] - INK[0]) * warm, g = INK[1] + (SEAL[1] - INK[1]) * warm, b = INK[2] + (SEAL[2] - INK[2]) * warm;
+    for (var i = 0; i < N * N; i++) { var a = mask[i]; if (!a) continue;
+      var k = (T - f[i]) / w; k = k < 0 ? 0 : (k > 1 ? 1 : k);
+      o[i * 4] = r; o[i * 4 + 1] = g; o[i * 4 + 2] = b; o[i * 4 + 3] = a * k; }
+    cx.putImageData(img, 0, 0);
+  }
+  function soak(ch, mine) {
+    cancelAnimationFrame(raf);
+    var run = function () {
+      var mask = glyphMask(ch), t0 = performance.now();
+      if (still) { paint(mask, 1, mine ? 1 : 0); return; }
+      var step = function (now) {
+        var t = (now - t0) / 1000, p = Math.min(1, t / 0.6), warm = mine ? Math.max(0, Math.min(1, (t - 0.7) / 0.6)) : 0;
+        paint(mask, p, warm * warm * (3 - 2 * warm));
+        if (t < (mine ? 1.35 : 0.62)) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    };
+    if (document.fonts && document.fonts.load) document.fonts.load('500 40px ' + css.getPropertyValue('--han'), ch).then(run, run); else run();
+  }
+
   var ten = $('ten');
   TEN.forEach(function (t, i) {
     var b = document.createElement('button');
     b.type = 'button'; b.setAttribute('aria-pressed', 'false');
-    b.setAttribute('aria-label', t.name + ' — ' + t.image);
-    b.innerHTML = '<span class="c ' + t.el + '">' + t.h + '</span><span class="n">' + t.short + '</span>';
+    b.setAttribute('aria-label', t.name + ': ' + t.image);
+    b.innerHTML = '<span class="c">' + t.h + '</span><span class="n"><i style="background:var(--' + t.el + ')"></i>' + t.short + '</span>';
     b.addEventListener('click', function () { show(i, null); });
     ten.appendChild(b);
   });
@@ -240,29 +285,30 @@ footer p { margin: 0 0 .35rem; }
   function show(i, date, quiet) {
     var t = TEN[i], r = $('result');
     $('err').textContent = '';
-    $('r-kick').textContent = date ? 'Born ' + MONTHS[date.m - 1] + ' ' + date.d + ', ' + date.y + ' — you were born as' : 'One of the ten';
-    $('r-han').textContent = t.h; $('r-han').className = 'han ' + t.el;
+    $('r-kick').textContent = date ? 'Born ' + MONTHS[date.m - 1] + ' ' + date.d + ', ' + date.y : 'One of the ten';
+    $('r-dot').style.background = 'var(--' + t.el + ')';
+    $('r-tag').textContent = t.name + (date ? ' · your day master' : '');
     $('r-image').textContent = t.image;
-    $('r-tag').innerHTML = t.name + ' · <span class="h">' + t.h + '</span>' + (date ? ' · your day master' : '');
     $('r-essence').textContent = t.essence;
     $('r-gift').textContent = t.gift;
     $('r-shadow').textContent = t.shadow;
     var night = $('r-night');
     if (date) {
       var before = TEN[(i + 9) % 10], after = TEN[(i + 1) % 10];
-      $('r-night-text').innerHTML = 'Saju goes by the sun over your birthplace, not by the clock, and the two can be an hour or more apart. ' +
-        'So if you were born within an hour or two of midnight, your day can slip to the one next to it. ' +
-        'Just after midnight, you may be <span class="h">' + before.h + '</span> instead — ' + before.image + '. ' +
-        'Just before midnight, <span class="h">' + after.h + '</span> — ' + after.image + '. ' +
+      $('r-night-text').innerHTML = 'Saju goes by the sun over your birthplace, and the sun and the clock can be an hour or more apart. ' +
+        'If you were born within an hour or two of midnight, your day can slip to the one next to it. ' +
+        'Just after midnight, you may be <span class="han">' + before.h + '</span> instead: ' + before.image + '. ' +
+        'Just before midnight, <span class="han">' + after.h + '</span>: ' + after.image + '. ' +
         'A full reading settles it from your birth time and city.';
       night.hidden = false; night.open = false;
     } else { night.hidden = true; }
     [].forEach.call(ten.children, function (b, n) { b.setAttribute('aria-pressed', n === i ? 'true' : 'false'); });
     $('copy').textContent = 'Copy a link to this one';
-    r.hidden = false; r.classList.remove('in'); void r.offsetWidth; r.classList.add('in');
+    r.hidden = false;
+    soak(t.h, !!date);
     try { history.replaceState(null, '', '#' + t.k); } catch (e) {}
     if (quiet) return;
-    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    r.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
     r.focus({ preventScroll: true });
   }
 
@@ -270,7 +316,6 @@ footer p { margin: 0 0 .35rem; }
     e.preventDefault();
     var yy = +y.value, mm = +m.value, dd = +d.value;
     if (!yy || !mm || !dd) { $('err').textContent = 'Pick your month, day and year.'; return; }
-    $('err').textContent = '';
     show(stem(yy, mm, dd), { y: yy, m: mm, d: dd });
   });
 
